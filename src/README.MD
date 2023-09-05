@@ -10,7 +10,7 @@ Install it then run
 
  Npm update
 
- Npm install
+  Npm install
 
  Npm start
 ```
@@ -21,7 +21,6 @@ npm install react-icons
 npm install framer-motion
 npm i react-router-dom 
 ```
-and anything needed to run a react app
 ## Usage
 
 -   You can click on the trending button to see what movies are trending today

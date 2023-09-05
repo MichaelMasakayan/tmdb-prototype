@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { MovieProvider } from "./MovieScope";
+import Panel from "./components/Panel";
+import Container from "./components/Container";
+import tmdbPNG from "./assets/tmdb.png";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MovieProvider>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Panel />
+                <Container />
+              </>
+            }
+          />
+        </Routes>
+        <footer className="footer">
+          <img src={tmdbPNG} alt="API Logo" className="api-logo" />
+        </footer>
+      </MovieProvider>
     </div>
   );
 }
-
 export default App;

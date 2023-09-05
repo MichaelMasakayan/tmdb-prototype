@@ -1,38 +1,275 @@
 .App {
-  text-align: center;
+  max-width: 1200px;
+  color: #fff;
+  margin: 30px auto;
+  padding: 0 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  margin-left: 70px;
 }
+/* left panel */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.panel {
+  width: 55px;
+  height: 122px; 
+  position: fixed;
+  bottom: 20px; /* This will position the panel 20px from the bottom */
+  background-color: #0d253f;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.panel div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.panel svg {
+  font-size: 26px;
+  cursor: pointer;
+  color: hsl(1, 180, 228);
+}
+
+.panel svg:hover {
+  opacity: 0.7;
+}
+
+.panel svg.active {
+  color: #fff;
+}
+
+/* MOVIES */
+
+.trending-movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 1.2rem;
+
+}
+
+.section-title {
+  color: hsl(223, 36%, 84%);
+  height: 100%;
+  margin: 35px 0;
+ 
+}
+
+.section-description {
+  color: hsl(0, 0%, 100%);
+  margin: 0;
+  margin: 15px 10px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  font-size: .4rem;
+}
+
+/* MOVIE */
+
+.movie {
+
+  overflow: hidden;
+  position: relative;
+}
+
+.movie:hover {
+  box-shadow: 0px 0px 24px 0px hsl(223, 36%, 36%);
+  /* transition: all 0.3s ease-in-out; */
+  transform: scale(1.05);
+}
+
+.movie .shadow {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.movie h2 {
+  margin: 15px 10px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  font-size: 1rem;
+}
+
+.movie h5 {
+  /* makes the tittle be in the top left corner */
+  margin: 15px 10px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+
+}
+
+.movie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie svg {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.movie svg:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+.title-and-star {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-title {
+  flex: 1;
+  margin-right: 10px; /* or any desired space between title and star */
+}
+.movie-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 50px); 
+}
+
+.overview-section {
+  background-color: rgb(59, 59, 60);
+  padding: 10px;
+  border-radius: 0px; 
+}
+
+.overview-section h4 {
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.overview-section p {
+  color: white;
+  margin-top: 3px; 
+}
+.release-date {
+  color: white; /* or any other color you prefer */
+  font-size: 0.8rem; /* adjust as needed */
+  margin-top: 1px; /* space between overview and release date */
+  display: block; /* to ensure it appears on a new line */
+}
+.total-results {
+  color: white; /* or any other color you prefer */
+  font-size: 0.9rem; /* adjust as needed */
+  margin-top: 10px; /* space between pagination and total results */
+  text-align: center; /* center the text */
+}
+body {
+  background-color: #081626;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* other like header */
+.details h4 {
+  margin: 0;
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+}
+.footer img {
+  max-width: 100px; /* Adjust as needed for logo size */
+  height: auto;
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+
+  
+}
+
+/* Centering the entire search container */
+
+
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center; /* Center the items vertically */
+} 
+
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  background-color: #22a6b3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, .5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
